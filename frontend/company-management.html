@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Management | Placement Cell</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="navbar">
+    <h2>Company Management</h2>
+    <button onclick="history.back()">Back</button>
+  </div>
+
+  <div class="container">
+    <h3>Companies</h3>
+    <div id="company-cards" class="card-grid"></div>
+  </div>
+
+  <script src="assets/js/api.js"></script>
+  <script>
+    const render = (companies) => {
+      const list = document.getElementById('company-cards');
+      list.innerHTML = companies.map(c => `
+        <div class="card">
+          <h3>${c.name}</h3>
+          <p>${c.description || 'No description'}</p>
+          <p><strong>Role:</strong> ${c.role || '-'}</p>
+          <p><strong>Package:</strong> ${c.package || '-'}</p>
+        </div>
+      `).join('');
+    };
+    api.getCompanies().then(render);
+  </script>
+</body>
+</html>
+
+

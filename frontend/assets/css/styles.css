@@ -1,0 +1,125 @@
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --bg: #f5f7fb;
+  --text: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.navbar {
+  background: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+input, select, textarea {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.status-pill {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.status-Pending { background: #fef3c7; color: #92400e; }
+.status-Approved { background: #d1fae5; color: #065f46; }
+.status-Rejected { background: #fee2e2; color: #991b1b; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.auth-card {
+  max-width: 420px;
+  width: 100%;
+}
+
+.link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+

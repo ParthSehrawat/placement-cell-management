@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Status | Placement Cell</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <h2>Application Status</h2>
+    <button onclick="history.back()">Back</button>
+  </div>
+
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Skills</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="status-table"></tbody>
+    </table>
+  </div>
+
+  <script src="assets/js/api.js"></script>
+  <script>
+    api.getMyApplications().then((applications) => {
+      document.getElementById('status-table').innerHTML = applications.map(app => `
+        <tr>
+          <td>${app.company_name}</td>
+          <td>${app.skills}</td>
+          <td><span class="status-pill status-${app.status}">${app.status}</span></td>
+        </tr>
+      `).join('');
+    });
+  </script>
+</body>
+</html>
+
+

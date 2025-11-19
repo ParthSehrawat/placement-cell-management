@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Placement Cell</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="navbar">
+    <h2>Placement Cell - Admin</h2>
+    <div>
+      <a class="link" href="company-management.html" style="margin-right:1rem;">Company Management</a>
+      <button onclick="api.logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Add Company</h3>
+    <form id="company-form">
+      <input type="text" name="name" placeholder="Company Name" required />
+      <input type="text" name="role" placeholder="Role" />
+      <input type="text" name="package" placeholder="Package" />
+      <textarea name="description" placeholder="Description"></textarea>
+      <button type="submit">Create Company</button>
+    </form>
+  </div>
+
+  <div class="container">
+    <h3>Add Job</h3>
+    <form id="job-form">
+      <select id="job-company" name="company_id" required></select>
+      <input type="text" name="skills" placeholder="Required Skills" />
+      <input type="text" name="salary" placeholder="Salary" />
+      <input type="date" name="last_date" />
+      <button type="submit">Create Job</button>
+    </form>
+  </div>
+
+  <div class="container">
+    <h3>Companies</h3>
+    <table class="table" id="admin-companies">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Package</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="container">
+    <h3>Jobs</h3>
+    <table class="table" id="admin-jobs">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Skills</th>
+          <th>Salary</th>
+          <th>Last Date</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="container">
+    <h3>Applications</h3>
+    <table class="table" id="admin-applications">
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Branch</th>
+          <th>CGPA</th>
+          <th>Company</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
+
+

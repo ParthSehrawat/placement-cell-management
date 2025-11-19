@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply for Job | Placement Cell</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <h2>Apply for Job</h2>
+    <button onclick="history.back()">Back</button>
+  </div>
+  <div class="container" id="job-detail"></div>
+
+  <script src="assets/js/api.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const jobId = params.get('id');
+
+    const render = (job) => {
+      document.getElementById('job-detail').innerHTML = `
+        <h3>${job.company_name}</h3>
+        <p><strong>Skills:</strong> ${job.skills}</p>
+        <p><strong>Salary:</strong> ${job.salary}</p>
+        <p><strong>Last date:</strong> ${job.last_date}</p>
+        <button onclick="apply()">Apply Now</button>
+      `;
+    };
+
+    const apply = async () => {
+      await api.applyJob(jobId);
+      alert('Application submitted');
+    };
+
+    window.apply = apply;
+
+    api.getJob(jobId).then(render);
+  </script>
+</body>
+</html>
+
+
